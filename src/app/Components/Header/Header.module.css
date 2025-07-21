@@ -1,0 +1,207 @@
+.header {
+  background-color: #fffdd8;
+  box-shadow: 0px 4px 20px 10px #04392c1a;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  color: #123f26;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navItem {
+  text-decoration: none;
+  color: #123f26;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0 0.5rem;
+}
+
+.navItem:hover {
+  color: #123f26;
+  background-color: #f2cd27;
+  scale: 1.05;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: #f2cd27;
+  color: #123f26;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #123f26;
+  transform: translateY(-1px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburgerLine {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 2px 0;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+.hamburger .hamburgerLine.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger .hamburgerLine.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger .hamburgerLine.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobileNav.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNavItem {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+.mobileNavItem:hover {
+  color: #04392c;
+  background-color: #f5f5f5;
+}
+
+.mobileLoginButton {
+  background-color: #f2cd27;
+  color: #04392c;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.mobileLoginButton:hover {
+  background-color: #005a9e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .headerContainer {
+    padding: 1rem;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .headerContainer {
+    padding: 1rem 1.5rem;
+  }
+
+  .desktopNav {
+    gap: 1.5rem;
+  }
+
+  .navItem {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .loginButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

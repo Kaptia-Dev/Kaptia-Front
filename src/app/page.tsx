@@ -1,95 +1,55 @@
+// app/page.tsx or src/app/page.tsx (depends on your setup)
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Header from "./Components/Header/Header";
+import { useRef } from "react";
 
 export default function Home() {
+  const whoAreWeRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = () => {
+    whoAreWeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <Header />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main className={styles.main}>
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>
+            DATOS QUE <span className={styles.highlight}>CULTIVAN</span> VENTAS
+          </h1>
+          <p
+          className={styles.heroSubtitle}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            Tu plataforma integral para la gestión y optimización de recursos
+            agrícolas
+          </p>
+        </div>
+        <button className={styles.arrowButton} onClick={scrollToSection}>
+          <Image
+            src="/arrow-down.png" // Make sure this file exists in /public
+            alt="scroll down"
+            width={24}
+            height={24}
+            className={styles.arrowIcon}
+          />
+        </button>
+        <div className={styles.heroVisual}>
+          <div className={styles.circle}></div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <section className={styles.whoAreWe} ref={whoAreWeRef}>
+        <h1>¿Quiénes somos?</h1>
+        <p>
+          Somos un equipo de profesionales apasionados por la tecnología y la
+          innovación, comprometidos en ofrecer soluciones que transformen la
+          manera en que las personas interactúan con el mundo digital.
+        </p>
+      </section>
     </div>
   );
 }
