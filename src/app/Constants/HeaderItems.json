@@ -1,0 +1,24 @@
+{
+  "headerItems": [
+    {
+      "title": "Home",
+      "link": "/"
+    },
+    {
+      "title": "Sobre Nosotros",
+      "link": "#About"
+    },
+    {
+      "title": "Precios",
+      "link": "#Costs"
+    },
+    {
+      "title": "Contacto",
+      "link": "#Contact"
+    },
+    {
+      "title": "Iniciar Sesión",
+      "link": "/login"
+    }
+  ]
+}
