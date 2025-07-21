@@ -10,7 +10,13 @@
   padding: 1rem 2rem;
   align-items: center;
   color: #123f26;
-  font: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
 .headerContainer {
