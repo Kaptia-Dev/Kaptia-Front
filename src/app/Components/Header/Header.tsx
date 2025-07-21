@@ -48,7 +48,7 @@ const Header: React.FC = ({}) => {
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <img
-          src={KaptiaLogo.src}
+          src={"/KaptiaLogo.png"}
           alt="Logo"
           className={styles.logo}
           onClick={handleLogoClick}
