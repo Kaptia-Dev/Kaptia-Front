@@ -14,11 +14,9 @@
 
 .whoAreWe {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
   padding: 2rem;
-  text-align: center;
   width: 100%;
   height: 100vh;
   padding: 1rem;
@@ -112,4 +110,89 @@
   letter-spacing: 0%;
   width: 100%;
   max-width: 600px;
+}
+
+.whoAreWeLeft,
+.whoAreWeRight {
+  width: 50%;
+  padding: 2rem;
+}
+.whoAreWeLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.whoAreWeHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 2rem;
+  width: 100%;
+}
+
+.whoAreWeDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 2rem;
+  width: 100%;
+}
+
+.whoAreWeTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #04392c;
+}
+
+.whoAreWeDescription {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #2d2d2d;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.whoAreWeRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftDecoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-top: 15em;
+  margin-right: 1.5em;
+}
+
+.rightDecoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.leftDeco,
+.rightDeco {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
