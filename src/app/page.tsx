@@ -21,9 +21,7 @@ export default function Home() {
           <h1 className={styles.heroTitle}>
             DATOS QUE <span className={styles.highlight}>CULTIVAN</span> VENTAS
           </h1>
-          <p
-          className={styles.heroSubtitle}
-          >
+          <p className={styles.heroSubtitle}>
             Tu plataforma integral para la gestión y optimización de recursos
             agrícolas
           </p>
@@ -43,12 +41,39 @@ export default function Home() {
       </main>
 
       <section className={styles.whoAreWe} ref={whoAreWeRef}>
-        <h1>¿Quiénes somos?</h1>
-        <p>
-          Somos un equipo de profesionales apasionados por la tecnología y la
-          innovación, comprometidos en ofrecer soluciones que transformen la
-          manera en que las personas interactúan con el mundo digital.
-        </p>
+        <div className={styles.whoAreWeLeft}>
+          <div className={styles.whoAreWeHeaderContainer}>
+            <h1 className={styles.whoAreWeTitle}>¿Quiénes somos?</h1>
+          </div>
+          <div className={styles.whoAreWeDescriptionContainer}>
+            <p className={styles.whoAreWeDescription}>
+              Tu mejor opción de agente inteligente para impulsar la venta de
+              fertilizantes orgánicos a base de sargazo. Utilizamos datos y
+              análisis inteligente para prospectar clientes y hacer seguimiento
+              a cada venta.
+            </p>
+          </div>
+        </div>
+        <div className={styles.whoAreWeRight}>
+          <div className={styles.leftDecoContainer}>
+            <Image
+              src="/left-deco.png"
+              alt="left decoration"
+              width={100}
+              height={100}
+              className={styles.leftDeco}
+            />
+          </div>
+          <div className={styles.rightDecoContainer}>
+            <Image
+              src="/right-deco.png"
+              alt="right decoration"
+              width={100}
+              height={100}
+              className={styles.rightDeco}
+            />
+          </div>
+        </div>
       </section>
     </div>
   );
