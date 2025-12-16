@@ -1,4 +1,4 @@
-import Swal, { SweetAlertIcon } from "sweetalert2";
+import type { SweetAlertIcon } from "sweetalert2";
 
 export type AlertOptions = {
   title: string;
@@ -15,7 +15,14 @@ const defaultOptions = {
   confirmButtonText: "OK",
 };
 
-export const showAlert = (options: AlertOptions) => {
+export const showAlert = async (options: AlertOptions) => {
+  // Only import Swal on the client side to avoid SSR issues with localStorage
+  if (typeof window === 'undefined') {
+    console.warn('showAlert called on server side, skipping');
+    return;
+  }
+
+  const Swal = (await import("sweetalert2")).default;
   const mergedOptions = { ...defaultOptions, ...options };
   Swal.fire(mergedOptions).then((result: any) => {
     if (result.isConfirmed && options.func) {
