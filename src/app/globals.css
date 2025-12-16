@@ -1,1 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
+
+@plugin "@midudev/tailwind-animations";
+
+@theme {
+  /* Poppins Typography */
+  --font-sans: Poppins, "sans-serif";
+
+  /* Primary Blue */
+  --color-primary-blue-50: #effaff;
+  --color-primary-blue-100: #dff4ff;
+  --color-primary-blue-200: #b7ecff;
+  --color-primary-blue-300: #77dfff;
+  --color-primary-blue-400: #2ed0ff;
+  --color-primary-blue-500: #03b2e9; /* Main Color */
+  --color-primary-blue-600: #0096d1;
+  --color-primary-blue-700: #0077a9;
+  --color-primary-blue-800: #01658b;
+  --color-primary-blue-900: #075373;
+  --color-primary-blue-950: #05354c;
+
+  /* Secondary Blue */
+  --color-secondary-blue-50: #eefbfd;
+  --color-secondary-blue-100: #d4f1f9;
+  --color-secondary-blue-200: #afe4f2;
+  --color-secondary-blue-300: #78d0e8; /* Main Color */
+  --color-secondary-blue-400: #3ab3d6;
+  --color-secondary-blue-500: #1e96bc;
+  --color-secondary-blue-600: #1c789e;
+  --color-secondary-blue-700: #1d6181;
+  --color-secondary-blue-800: #20516a;
+  --color-secondary-blue-900: #1f445a;
+  --color-secondary-blue-950: #0f2b3d;
+
+  /* Yellow */
+  --color-custom-yellow-50: #fffdeb;
+  --color-custom-yellow-100: #fff8c6;
+  --color-custom-yellow-200: #fff088;
+  --color-custom-yellow-300: #ffe34a;
+  --color-custom-yellow-400: #ffd633; /* Main Color */
+  --color-custom-yellow-500: #f9b207;
+  --color-custom-yellow-600: #dd8802;
+  --color-custom-yellow-700: #b76106;
+  --color-custom-yellow-800: #944a0c;
+  --color-custom-yellow-900: #7a3d0d;
+  --color-custom-yellow-950: #461f02;
+
+  /* Pink */
+  --color-custom-pink-50: #fff1f4;
+  --color-custom-pink-100: #ffe3e8;
+  --color-custom-pink-200: #ffccd8;
+  --color-custom-pink-300: #ffa1b8;
+  --color-custom-pink-400: #ff789c; /* Main Color */
+  --color-custom-pink-500: #f93a72;
+  --color-custom-pink-600: #e7175e;
+  --color-custom-pink-700: #c30d4f;
+  --color-custom-pink-800: #a30e49;
+  --color-custom-pink-900: #8b1045;
+  --color-custom-pink-950: #4e0321;
+
+  /* Orange */
+  --color-custom-orange-50: #fffaeb;
+  --color-custom-orange-100: #fff2c6;
+  --color-custom-orange-200: #ffe387;
+  --color-custom-orange-300: #ffce49;
+  --color-custom-orange-400: #ffb81f;
+  --color-custom-orange-500: #fb9b11; /* Main Color */
+  --color-custom-orange-600: #de6f01;
+  --color-custom-orange-700: #b84b05;
+  --color-custom-orange-800: #953a0b;
+  --color-custom-orange-900: #7b300c;
+  --color-custom-orange-950: #471701;
+
+  /* Green */
+  --color-custom-green-50: #f1fcf1;
+  --color-custom-green-100: #e1f8e0;
+  --color-custom-green-200: #c3f0c2;
+  --color-custom-green-300: #82df81; /* Main Color */
+  --color-custom-green-400: #5ccd5b;
+  --color-custom-green-500: #34b334;
+  --color-custom-green-600: #279326;
+  --color-custom-green-700: #217421;
+  --color-custom-green-800: #1f5c1f;
+  --color-custom-green-900: #1b4c1c;
+  --color-custom-green-950: #0a290b;
+}
