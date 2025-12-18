@@ -1,136 +1,74 @@
 "use client";
 
-import React, { useState } from "react";
-import { HeaderItem } from "@/app/types/Header";
-import HeaderItems from "@/app/Constants/HeaderItems.json";
-import styles from "./Header.module.css";
-import { useRouter } from "next/navigation";
-import KaptiaLogo from "@/app/Assets/Images/KaptiaLogo.png";
+import React, { useEffect, useState } from "react";
 
-const Header: React.FC = ({}) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
+const Header: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const handleLogoClick = () => {
-    router.push("/");
-  };
-
-  const handleLoginClick = () => {
-    // Handle login functionality here
-    router.push("/login");
-  };
-
-  const handleItemClick = (item: HeaderItem) => {
-    if (item.title === "Iniciar Sesión") {
-      handleLoginClick();
-    } else {
-      // Handle navigation for other items
-      if (item.link.startsWith("#")) {
-        // Smooth scroll to section
-        const element = document.querySelector(item.link);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Navigate to page using Next.js router
-        router.push(item.link);
-      }
-    }
-    // Close mobile menu after clicking
-    setIsMenuOpen(false);
-  };
+  const linkClass =
+    "relative px-2 py-1 transition-colors duration-300 hover:text-custom-yellow-400 " +
+    "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-custom-yellow-400 " +
+    "after:transition-all after:duration-300 hover:after:w-full after:rounded-full after:content-['']";
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerContainer}>
+    <header
+      className={`flex justify-center items-center w-full z-50 fixed transition-all duration-300 ${
+        scrolled ? "px-5 pt-6" : ""
+      }`}
+    >
+      <nav
+        className={`flex items-center w-full justify-between px-5 transition-all duration-300 ${
+          scrolled
+            ? "rounded-2xl backdrop-blur-[6px] py-5 bg-[#F9FCED]/70 shadow-xl"
+            : "bg-transparent py-8"
+        }`}
+      >
         <img
-          src={"/KaptiaLogo.png"}
-          alt="Logo"
-          className={styles.logo}
-          onClick={handleLogoClick}
+          className={`${scrolled ? "h-8" : "h-10"} transition-all duration-300`}
+          src="/KaptiaLogo.png"
+          alt="Logo Kaptia"
         />
 
-        {/* Desktop Navigation */}
-        <nav className={styles.desktopNav}>
-          {HeaderItems.headerItems.map((item: HeaderItem, index: number) => (
-            <div key={index}>
-              {item.title === "Iniciar Sesión" ? (
-                <button
-                  className={styles.loginButton}
-                  onClick={() => handleItemClick(item)}
-                >
-                  {item.title}
-                </button>
-              ) : (
-                <a
-                  href={item.link}
-                  className={styles.navItem}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleItemClick(item);
-                  }}
-                >
-                  {item.title}
-                </a>
-              )}
-            </div>
-          ))}
-        </nav>
-
-        {/* Mobile Hamburger Menu */}
-        <button
-          className={styles.hamburger}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
+        <ul
+          className={`flex font-bold text-custom-green-950 items-center ${
+            scrolled ? "gap-16" : "gap-24"
+          } transition-all duration-300`}
         >
-          <span
-            className={`${styles.hamburgerLine} ${
-              isMenuOpen ? styles.open : ""
-            }`}
-          ></span>
-          <span
-            className={`${styles.hamburgerLine} ${
-              isMenuOpen ? styles.open : ""
-            }`}
-          ></span>
-          <span
-            className={`${styles.hamburgerLine} ${
-              isMenuOpen ? styles.open : ""
-            }`}
-          ></span>
-        </button>
+          <li>
+            <a href="#inicio" className={linkClass}>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#sobre-nosotros" className={linkClass}>
+              Sobre Nosotros
+            </a>
+          </li>
+          <li>
+            <a href="#precios" className={linkClass}>
+              Precios
+            </a>
+          </li>
+          <li>
+            <a href="#contacto" className={linkClass}>
+              Contacto
+            </a>
+          </li>
+        </ul>
 
-        {/* Mobile Navigation Menu */}
-        <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ""}`}>
-          {HeaderItems.headerItems.map((item: HeaderItem, index: number) => (
-            <div key={index}>
-              {item.title === "Iniciar Sesión" ? (
-                <button
-                  className={styles.mobileLoginButton}
-                  onClick={() => handleItemClick(item)}
-                >
-                  {item.title}
-                </button>
-              ) : (
-                <a
-                  href={item.link}
-                  className={styles.mobileNavItem}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleItemClick(item);
-                  }}
-                >
-                  {item.title}
-                </a>
-              )}
-            </div>
-          ))}
-        </nav>
-      </div>
+        <button className="bg-custom-yellow-400 text-custom-green-950 px-5 py-2 rounded-lg relative font-semibold shadow cursor-pointer duration-400 overflow-hidden group">
+          <span className="absolute bg-custom-yellow-500/40 right-full top-0 bottom-0 w-full z-0 group-hover:right-0 transition-all duration-300"></span>
+          <span className="relative z-10">Iniciar Sesión</span>
+        </button>
+      </nav>
     </header>
   );
 };
