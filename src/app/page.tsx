@@ -2,7 +2,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./components/Header/Header";
+import Header from "./components/header/Header";
 import { useRef } from "react";
 
 export default function Home() {
@@ -35,9 +35,9 @@ export default function Home() {
             className={styles.arrowIcon}
           />
         </button>
-        <div className={styles.heroVisual}>
+        {/* <div className={styles.heroVisual}>
           <div className={styles.circle}></div>
-        </div>
+        </div> */}
       </main>
 
       <section className={styles.whoAreWe} ref={whoAreWeRef}>
