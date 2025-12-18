@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HeaderItem } from "@/app/Types/Header";
+import { HeaderItem } from "@/app/types/Header";
 import HeaderItems from "@/app/Constants/HeaderItems.json";
 import styles from "./Header.module.css";
 import { useRouter } from "next/navigation";
