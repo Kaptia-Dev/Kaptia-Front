@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronDown20Regular, PersonRegular, ArrowExitFilled } from "@fluentui/react-icons";
-import { TopNavbarProps, TopNavbarItem } from "@/app/Types/TopNavbarType";
+import { TopNavbarProps, TopNavbarItem } from "@/app/types/TopNavbarType";
 import styles from "./TopNavbar.module.css";
-import { getCookie, deleteCookie } from "@/app/Utils/CookieUtil";
-import { showConfirmAlert, showSuccessAlert, showErrorAlert } from "@/app/Utils/AlertUtil";
+import { getCookie, deleteCookie } from "@/app/utils/CookieUtil";
+import { showConfirmAlert, showSuccessAlert, showErrorAlert } from "@/app/utils/AlertUtil";
 
 const TopNavbarComponent: React.FC<TopNavbarProps> = ({
   userInfo: propsUserInfo,

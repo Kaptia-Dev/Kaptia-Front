@@ -2,7 +2,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./Components/Header/Header";
+import Header from "./components/Header/Header";
 import { useRef } from "react";
 
 export default function Home() {

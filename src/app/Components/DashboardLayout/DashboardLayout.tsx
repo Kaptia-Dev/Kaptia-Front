@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { LateralNavbarType } from "@/app/Types/LateralNavbarType";
-import LateralNavbarComponent from "@/app/Components/LateralNavbarComponent/LateralNavbarComponent";
-import TopNavbarComponent from "@/app/Components/TopNavbarComponent/TopNavbarComponent";
+import { LateralNavbarType } from "@/app/types/LateralNavbarType";
+import LateralNavbarComponent from "@/app/components/LateralNavbarComponent/LateralNavbarComponent";
+import TopNavbarComponent from "@/app/components/TopNavbarComponent/TopNavbarComponent";
 import {
   HomeFilled,
   MapFilled,

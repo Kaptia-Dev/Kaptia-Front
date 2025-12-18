@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./LateralNavbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { LateralNavbarType } from "@/app/Types/LateralNavbarType";
+import { LateralNavbarType } from "@/app/types/LateralNavbarType";
 
 type Props = {
   items: LateralNavbarType[];
