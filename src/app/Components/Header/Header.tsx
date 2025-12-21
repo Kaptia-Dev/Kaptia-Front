@@ -54,10 +54,8 @@ const Header: React.FC = () => {
         }`}
       >
         <nav
-          className={`items-center w-full justify-between px-5 transition-all duration-300 flex ${
-            scrolled
-              ? "rounded-2xl backdrop-blur-[6px] py-5 bg-[#F9FCED]/70 shadow-xl"
-              : "bg-transparent py-8"
+          className={`items-center w-full justify-between px-5 transition-all duration-300 flex bg-[#FFFDD8]/90 ${
+            scrolled ? "rounded-2xl backdrop-blur-[6px] py-5 shadow-xl bg-[#FFFFF0]/60" : "py-8"
           }`}
         >
           <button

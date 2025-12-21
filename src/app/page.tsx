@@ -22,14 +22,19 @@ export default function Home() {
               rootMargin="-100px"
               textAlign="left"
             >
-              Datos que <span className="text-custom-yellow-400">cultivan</span> ventas
+              Datos que <span className="text-custom-yellow-400">cultivan</span>{" "}
+              ventas
             </SplitText>
             <span className="text-2xl animate-slide-in-left">
               Tu plataforma integral para la gestión y optimización de recursos
               agrícolas
             </span>
           </div>
-          <div className="w-1/2">Círculos</div>
+          <div className="w-1/2">
+            <div className="rounded-full bg-custom-green-950 h-200 w-200 relative shadow animate-slide-in-right">
+              <div className="rounded-full absolute bg-custom-yellow-400 w-160 h-160 -left-8 -bottom-8 shadow animate-slide-in-bottom"></div>
+            </div>
+          </div>
         </section>
         <section>
           <p>
