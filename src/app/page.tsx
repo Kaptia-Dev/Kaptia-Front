@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "./components/header/Header";
+import SplitText from "./components/utils/SplitText";
 
 export default function Home() {
   return (
@@ -9,11 +10,21 @@ export default function Home() {
       <main className="flex flex-col flex-1 px-5 md:px-24">
         <section className="h-screen flex flex-col md:flex-row items-center justify-center">
           <div className="flex flex-col gap-4 w-1/2">
-            <h1 className="uppercase font-bold text-6xl md:text-8xl">
-              Datos que <span className="text-custom-yellow-400">cultivan</span>{" "}
-              ventas
-            </h1>
-            <span className="text-2xl">
+            <SplitText
+              className="uppercase font-bold text-6xl md:text-8xl"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
+            >
+              Datos que <span className="text-custom-yellow-400">cultivan</span> ventas
+            </SplitText>
+            <span className="text-2xl animate-slide-in-left">
               Tu plataforma integral para la gestión y optimización de recursos
               agrícolas
             </span>
