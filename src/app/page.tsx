@@ -32,7 +32,7 @@ export default function Home() {
           </div>
           <div className="w-1/2 hidden md:block">
             <div className="rounded-full bg-custom-green-950 h-200 w-200 relative shadow animate-slide-in-right">
-              <div className="rounded-full absolute bg-custom-yellow-400 w-160 h-160 -left-8 -bottom-8 shadow animate-slide-in-bottom"></div>
+              <div className="rounded-full absolute bg-custom-yellow-400/95 w-160 h-160 -left-8 -bottom-8 shadow animate-slide-in-bottom"></div>
             </div>
           </div>
         </section>
