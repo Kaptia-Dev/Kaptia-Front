@@ -4,13 +4,13 @@ import { LateralNavbarType } from "@/app/types/LateralNavbarType";
 import LateralNavbarComponent from "@/app/components/LateralNavbarComponent/LateralNavbarComponent";
 import TopNavbarComponent from "@/app/components/TopNavbarComponent/TopNavbarComponent";
 import {
-  HomeFilled,
-  MapFilled,
-  CalendarAgendaFilled,
-  DocumentSignatureFilled,
-  SettingsFilled,
-  BookDefaultFilled
-} from "@fluentui/react-icons";
+  HomeIcon,
+  MapIcon,
+  UsersIcon,
+  CalendarDaysIcon,
+  DocumentIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
 import styles from "./DashboardLayout.module.css";
 export interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -24,12 +24,12 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   userIsOwner = false,
 }) => {
   const lateralNavItems: LateralNavbarType[] = [
-    { title: "Home", link: "/dashboard", icon: <HomeFilled /> }, // Visible to all
-    { title: "Mapa", link: "/map", icon: <MapFilled /> }, // Visible to all
-    { title: "Mis clientes", link: "/clients", icon: <BookDefaultFilled /> }, // Only admin and owner
-    { title: "Agenda", link: "/agenda", icon: <CalendarAgendaFilled /> }, // Only admin and owner
-    { title: "Documentos", link: "/documents", icon: <DocumentSignatureFilled /> }, // Only owner
-    { title: "Configuración", link: "/settings", icon: <SettingsFilled /> }, // Only owner
+    { title: "Home", link: "/dashboard", icon: <HomeIcon className="h-6 w-6" /> }, // Visible to all
+    { title: "Mapa", link: "/map", icon: <MapIcon className="h-6 w-6" /> }, // Visible to all
+    { title: "Mis clientes", link: "/clients", icon: <UsersIcon className="h-6 w-6" /> }, // Only admin and owner
+    { title: "Agenda", link: "/agenda", icon: <CalendarDaysIcon className="h-6 w-6" /> }, // Only admin and owner
+    { title: "Documentos", link: "/documents", icon: <DocumentIcon className="h-6 w-6" /> }, // Only owner
+    { title: "Configuración", link: "/settings", icon: <Cog6ToothIcon className="h-6 w-6" /> }, // Only owner
   ];
 
   const handleNotificationClick = () => {
