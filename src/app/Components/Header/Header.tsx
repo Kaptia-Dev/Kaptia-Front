@@ -80,7 +80,11 @@ const Header: React.FC = () => {
             } transition-all duration-300`}
           >
             {navLinks.map((link, idx) => (
-              <li key={idx}>
+              <li
+                key={idx}
+                className="animate-slideDown"
+                style={{ animationDelay: `${idx * 200}ms` }}
+              >
                 <a href={link.href} className={linkClass}>
                   {link.name}
                 </a>
