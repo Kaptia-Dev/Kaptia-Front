@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ChevronDown20Regular, PersonRegular, ArrowExitFilled } from "@fluentui/react-icons";
+import { ChevronDownIcon, UserCircleIcon, ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
 import { TopNavbarProps, TopNavbarItem } from "@/app/types/TopNavbarType";
 import styles from "./TopNavbar.module.css";
 import { getCookie, deleteCookie } from "@/app/utils/CookieUtil";
@@ -240,17 +240,17 @@ const TopNavbarComponent: React.FC<TopNavbarProps> = ({
                   <p className={styles.userRole}>{userInfo.role}</p>
                 )}
               </div>
-              <ChevronDown20Regular />
+              <ChevronDownIcon className={styles.dropdownIcon} />
             </div>
             
             {isUserMenuOpen && (
               <div className={styles.userDropdown}>
                 <div className={styles.dropdownItem} onClick={handleProfileClick}>
-                  <PersonRegular className={styles.dropdownIcon} />
+                  <UserCircleIcon className={styles.dropdownIcon} />
                   Perfil
                 </div>
                 <div className={styles.dropdownItem} onClick={handleLogoutClick}>
-                  <ArrowExitFilled className={styles.dropdownIcon} />
+                  <ArrowRightOnRectangleIcon className={styles.dropdownIcon} />
                   Cerrar Sesión
                 </div>
               </div>

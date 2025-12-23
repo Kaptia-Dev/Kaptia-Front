@@ -5,7 +5,7 @@
 
 @theme {
   /* Poppins Typography */
-  --font-sans: Poppins, "sans-serif";
+  --font-sans: "Poppins", sans-serif;
 
   /* Primary Blue */
   --color-primary-blue-50: #effaff;

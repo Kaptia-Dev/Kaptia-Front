@@ -54,10 +54,8 @@ const Header: React.FC = () => {
         }`}
       >
         <nav
-          className={`items-center w-full justify-between px-5 transition-all duration-300 flex ${
-            scrolled
-              ? "rounded-2xl backdrop-blur-[6px] py-5 bg-[#F9FCED]/70 shadow-xl"
-              : "bg-transparent py-8"
+          className={`items-center w-full justify-between px-5 transition-all duration-300 flex bg-[#FFFDD8]/80 backdrop-blur-[6px]  ${
+            scrolled ? "rounded-2xl py-5 shadow-xl bg-[#FFFFF0]/60" : "py-8"
           }`}
         >
           <button
@@ -80,7 +78,11 @@ const Header: React.FC = () => {
             } transition-all duration-300`}
           >
             {navLinks.map((link, idx) => (
-              <li key={idx}>
+              <li
+                key={idx}
+                className="animate-slideDown"
+                style={{ animationDelay: `${idx * 200}ms` }}
+              >
                 <a href={link.href} className={linkClass}>
                   {link.name}
                 </a>
