@@ -9,16 +9,16 @@
 
   /* Primary Blue */
   --color-primary-blue-50: #effaff;
-  --color-primary-blue-100: #dff4ff;
-  --color-primary-blue-200: #b7ecff;
-  --color-primary-blue-300: #77dfff;
-  --color-primary-blue-400: #2ed0ff;
-  --color-primary-blue-500: #03b2e9; /* Main Color */
-  --color-primary-blue-600: #0096d1;
-  --color-primary-blue-700: #0077a9;
-  --color-primary-blue-800: #01658b;
-  --color-primary-blue-900: #075373;
-  --color-primary-blue-950: #05354c;
+  --color-primary-blue-100: #def4ff;
+  --color-primary-blue-200: #b6ecff;
+  --color-primary-blue-300: #75e0ff;
+  --color-primary-blue-400: #2cd2ff;
+  --color-primary-blue-500: #00b2e9;
+  --color-primary-blue-600: #0098d4;
+  --color-primary-blue-700: #0079ab;
+  --color-primary-blue-800: #00658d;
+  --color-primary-blue-900: #065474;
+  --color-primary-blue-950: #04354d;
 
   /* Secondary Blue */
   --color-secondary-blue-50: #eefbfd;
