@@ -26,7 +26,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="flex w-full md:w-1/2 flex-col items-center justify-center px-6 py-12 md:py-0">
+      <div className="flex h-screen w-full md:w-1/2 flex-col items-center justify-center px-6 py-12 md:py-0">
         <img
           className="h-16 md:h-20 mb-6 animate-slide-in-right"
           src="/logoAzul.webp"
