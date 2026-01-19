@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -8,6 +9,7 @@ import {
 } from "@heroicons/react/16/solid";
 
 const Header: React.FC = () => {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
@@ -90,7 +92,10 @@ const Header: React.FC = () => {
             ))}
           </ul>
 
-          <button className="bg-custom-yellow-400 text-custom-green-950 px-5 py-2 text-[1.2rem] rounded-lg relative font-semibold shadow cursor-pointer duration-400 overflow-hidden group">
+          <button
+            className="bg-custom-yellow-400 text-custom-green-950 px-5 py-2 text-[1.2rem] rounded-lg relative font-semibold shadow cursor-pointer duration-400 overflow-hidden group"
+            onClick={() => router.push("/auth")}
+          >
             <span className="absolute bg-custom-yellow-500/40 right-full top-0 bottom-0 w-full z-0 group-hover:right-0 transition-all duration-300"></span>
             <span className="relative z-10">Iniciar Sesión</span>
           </button>
