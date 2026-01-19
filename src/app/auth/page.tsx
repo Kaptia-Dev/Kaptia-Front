@@ -1,9 +1,28 @@
 "use client";
 import SplitText from "../components/utils/SplitText";
-
 import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  username: yup.string().required("El usuario es obligatorio"),
+  password: yup.string().required("La contraseña es obligatoria"),
+});
 
 export default function LoginPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
       <div className="hidden md:flex w-1/2 items-center justify-center relative ">
@@ -38,23 +57,46 @@ export default function LoginPage() {
         <form
           className="flex flex-col gap-5 w-full max-w-md animate-slide-in-right"
           autoComplete="off"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <input
-            className="border rounded-md p-3 border-[#3D3D3D]/40 focus:outline-none focus:border-primary-blue-500 transition"
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Ingresa tu nombre de usuario"
-            autoComplete="username"
-          />
-          <input
-            className="border rounded-md p-3 border-[#3D3D3D]/40 focus:outline-none focus:border-primary-blue-500 transition"
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Ingresa tu contraseña"
-            autoComplete="current-password"
-          />
+          <div className="flex flex-col gap-1">
+            <input
+              className={`border rounded-md p-3 border-[#3D3D3D]/40 focus:outline-none transition ${
+                errors.username
+                  ? "border-red-600 focus:border-red-600"
+                  : "focus:border-primary-blue-500"
+              }`}
+              type="text"
+              id="username"
+              placeholder="Ingresa tu nombre de usuario"
+              autoComplete="username"
+              {...register("username")}
+            />
+            {errors.username && (
+              <span className="text-red-600 text-sm">
+                {errors.username.message}
+              </span>
+            )}
+          </div>
+          <div className="flex flex-col gap-1">
+            <input
+              className={`border rounded-md p-3 border-[#3D3D3D]/40 focus:outline-none transition ${
+                errors.password
+                  ? "border-red-600 focus:border-red-600"
+                  : "focus:border-primary-blue-500"
+              }`}
+              type="password"
+              id="password"
+              placeholder="Ingresa tu contraseña"
+              autoComplete="current-password"
+              {...register("password")}
+            />
+            {errors.password && (
+              <span className="text-red-600 text-sm">
+                {errors.password.message}
+              </span>
+            )}
+          </div>
           <button
             className="p-3 rounded-md bg-yellow-400 hover:bg-yellow-500 text-white font-semibold transition"
             type="submit"
