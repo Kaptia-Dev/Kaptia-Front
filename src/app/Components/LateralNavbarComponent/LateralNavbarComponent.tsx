@@ -18,8 +18,8 @@ const LateralNavbarComponent: React.FC<Props> = ({
   items,
   userIsAdmin = false,
   userIsOwner = false,
-  openLogo = "/logoFull.svg",
-  closedLogo = "/logoReduced.svg",
+  openLogo = "/logoCombinado.webp",
+  closedLogo = "/favicon.webp",
   onMobileMenuToggle,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
