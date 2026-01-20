@@ -8,7 +8,7 @@ import { ArrowDownIcon } from "@heroicons/react/16/solid";
 
 export default function Home() {
   return (
-    <div className="h-full flex flex-col justify-between bg-[#fffdd8]">
+    <div className="h-full flex flex-col justify-between bg-primary-blue-500">
       <Header />
       <main className="flex flex-col flex-1 px-5 md:px-24">
         <section className="h-screen flex flex-col md:flex-row items-center justify-center relative">
@@ -66,18 +66,6 @@ export default function Home() {
               análisis inteligente para prospectar clientes y hacer seguimiento
               a cada venta.
             </p>
-          </div>
-          <div className="w-full md:w-1/2 flex items-center justify-center gap-4 md:gap-8 relative">
-            <img
-              className="h-32 sm:h-44 md:h-78 -mt-4 md:-mt-7.5"
-              src="/left-deco.png"
-              alt="Imágen izquierda"
-            />
-            <img
-              className="h-32 sm:h-44 md:h-78 -mb-4 md:-mb-7.5"
-              src="/right-deco.png"
-              alt="Imágen derecha"
-            />
           </div>
         </section>
       </main>
