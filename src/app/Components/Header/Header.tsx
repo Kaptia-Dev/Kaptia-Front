@@ -95,10 +95,10 @@ const Header: React.FC = () => {
           </ul>
 
           <button
-            className="bg-white text-primary-blue-500 px-12 py-2 text-[1.2rem] rounded-full relative font-semibold shadow cursor-pointer duration-400 overflow-hidden group"
+            className="bg-custom-yellow-400 text-primary-blue-500 px-12 py-2 text-[1.2rem] rounded-full relative font-semibold shadow cursor-pointer duration-400 overflow-hidden group"
             onClick={() => router.push("/auth")}
           >
-            <span className="absolute bg-custom-yellow-400 right-full top-0 bottom-0 w-full z-0 group-hover:right-0 transition-all duration-300"></span>
+            <span className="absolute bg-white right-full top-0 bottom-0 w-full z-0 group-hover:right-0 transition-all duration-300"></span>
             <span className="relative z-10 uppercase">Contacto</span>
           </button>
         </nav>
