@@ -23,7 +23,7 @@ export default function LoginPage() {
 
   const onSubmit = (data: any) => {
     console.log(data);
-    router.push("/dashboard");
+    router.push("/crm");
   };
 
   return (
