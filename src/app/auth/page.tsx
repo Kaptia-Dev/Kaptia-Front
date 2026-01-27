@@ -4,6 +4,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useRouter } from "next/navigation";
 
 const schema = yup.object().shape({
   username: yup.string().required("El usuario es obligatorio"),
@@ -11,6 +12,7 @@ const schema = yup.object().shape({
 });
 
 export default function LoginPage() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -21,6 +23,7 @@ export default function LoginPage() {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    router.push("/dashboard");
   };
 
   return (
