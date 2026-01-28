@@ -9,6 +9,7 @@ interface NavLinkProps {
   label: string;
   icon: React.ReactNode;
   onClick?: () => void;
+  isCollapsed?: boolean;
 }
 
 export const NavLink: React.FC<NavLinkProps> = ({
@@ -16,6 +17,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
   label,
   icon,
   onClick,
+  isCollapsed = false,
 }) => {
   const pathname = usePathname();
   
@@ -31,10 +33,11 @@ export const NavLink: React.FC<NavLinkProps> = ({
         isActive
           ? "bg-white/20 text-white"
           : "text-white/80 hover:bg-white/10 hover:text-white"
-      }`}
+      } ${isCollapsed ? "md:justify-center" : ""}`}
+      title={isCollapsed ? label : undefined}
     >
       <span className="text-white">{icon}</span>
-      {label}
+      <span className={isCollapsed ? "md:hidden" : ""}>{label}</span>
     </Link>
   );
 };
