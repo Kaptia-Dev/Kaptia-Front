@@ -7,9 +7,9 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`rounded-2xl bg-white p-5 shadow-sm ${className}`}>
+    <div className={`rounded-2xl bg-white p-4 shadow-sm ${className}`}>
       <p className="text-sm text-slate-500">{label}</p>
-      <p className="mt-4 text-2xl font-semibold text-slate-900">{value}</p>
+      <p className="mt-2 text-xl font-semibold text-slate-900">{value}</p>
     </div>
   );
 };
