@@ -12,6 +12,7 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const pageTitle = usePageTitle();
 
   return (
@@ -30,11 +31,15 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         secondaryItems={SECONDARY_NAV_ITEMS}
         logoutItem={LOGOUT_ITEM}
         isOpen={isSidebarOpen}
+        isCollapsed={isSidebarCollapsed}
         onClose={() => setIsSidebarOpen(false)}
+        onToggleCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
 
       {/* Main Content Area */}
-      <div className="flex min-h-screen flex-col md:pl-64">
+      <div className={`flex min-h-screen flex-col transition-all duration-300 ${
+        isSidebarCollapsed ? "md:pl-20" : "md:pl-64"
+      }`}>
         <Header
           title={pageTitle}
           subtitle="Dashboard"
