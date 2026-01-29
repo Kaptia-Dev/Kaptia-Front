@@ -1,5 +1,5 @@
 "use client";
-import SplitText from "../components/utils/SplitText";
+import SplitText from "../components/SplitText";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
