@@ -1,1 +1,0 @@
-export { usePageTitle } from "./usePageTitle";
