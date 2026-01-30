@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@midudev/tailwind-animations": "^0.2.0",
     "@tailwindcss/postcss": "^4.1.18",
+    "axios": "^1.13.4",
     "gsap": "^3.14.2",
     "motion": "^12.23.26",
     "next": "15.3.4",
